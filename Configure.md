@@ -1,4 +1,4 @@
-== Pull Request Plugin
+# Pull Request Plugin
 
 ### Triggering
  - Configure github-plugin https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin
