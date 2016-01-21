@@ -30,6 +30,8 @@
 - All input variables starts from `GITHUB_PR_*`
 - Refspec for [git-plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) is not hardcoded, branch specifier can be constructed using input variables
 - Configuration and code tried to be workflow friendly
+- Supports [workflow-plugin](https://github.com/jenkinsci/workflow-plugin)
+- Integrates with [block-queued-job-plugin](https://github.com/jenkinsci/block-queued-job-plugin). Allows create gatekeeping.
 - Integrated with [github-plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin) optimized/reused code for:
   - searching projects
   - using one hook url
