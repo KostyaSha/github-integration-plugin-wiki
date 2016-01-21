@@ -1,0 +1,1 @@
+This was rewritten version of [ghprb-plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin). After many years ghprb was in complex code state when keeping backward compatibility with fixing all bugs almost impossible (IMHO). Today it separate plugin. Code was inspired by github-plugin, git-plugin, ghprb-plugin and others.
