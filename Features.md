@@ -1,0 +1,37 @@
+## Pull Request Plugin
+
+- By design it extensible and new features can be added easily
+- Restriction features are not bundled into main code and can be extended separately. Available as API for doing checks from other plugin parts
+- Trigger events are splitted to separate classes and can do:
+  - Label: added, removed, exists
+  - PR states: closed, opened, commit changed
+  - Comment triggering
+- UI/configuration changes:
+  - No tones of checkboxes
+  - Trigger section contains only configuration related to triggering
+  - All messages configurable
+- Publishers are in post-build actions:
+  - slitted to separate publishers to have ability choose required order
+    - Set build status. Job can configured to not set PR statuses
+    - Add labels
+    - Remove labels
+    - Close PR
+    - Post comment with TokenMacro and Groovy Templates from [email-ext-plugin](https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin) support
+- Trigger check modes (planned):
+  - Cron checks with persistence
+  - Hooks with persisting state
+  - Hooks with persistance and periodic cron check (to avoid lost events)
+  - Lightweight using GH hooks without persisting state (penalty: lost events)
+- Built sources variants:
+  - Build only merged state. Note: merged to target branch only in moment when PR was built.
+  - Build only 'head' state. This is what is really contains in PR without merge to target branch.
+  - Conditional build with `GITHUB_PR_COND_REF`. When PR is mergeable it contains 'merge' word and 'head' when not.
+- Persisted state is stored near build configuration in `*.runtime.xml` file to exclude useless saves with [jobConfigHistory-plugin](https://wiki.jenkins-ci.org/display/JENKINS/JobConfigHistory+Plugin)
+- All input variables starts from `GITHUB_PR_*`
+- Refspec for [git-plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) is not hardcoded, branch specifier can be constructed using input variables
+- Configuration and code tried to be workflow friendly
+- Integrated with [github-plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin) optimized/reused code for:
+  - searching projects
+  - using one hook url
+  - almost one Global Configuration
+  - reused credentials lookup
