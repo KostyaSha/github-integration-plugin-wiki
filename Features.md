@@ -17,11 +17,11 @@
     - Remove labels
     - Close PR
     - Post comment with TokenMacro and Groovy Templates from [email-ext-plugin](https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin) support
-- Trigger check modes (planned):
+- Trigger check modes:
   - Cron checks with persistence
-  - Hooks with persisting state
+  - Hooks with persistence
   - Hooks with persistance and periodic cron check (to avoid lost events)
-  - Lightweight using GH hooks without persisting state (penalty: lost events)
+  - (TBD) Light hooks triggering without persisting state (penalty: lost events)
 - Built sources variants:
   - Build only merged state. Note: merged to target branch only in moment when PR was built.
   - Build only 'head' state. This is what is really contains in PR without merge to target branch.
