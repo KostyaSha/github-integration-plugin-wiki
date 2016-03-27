@@ -37,3 +37,4 @@
   - using one hook url
   - almost one Global Configuration
   - reused credentials lookup
+- Integrates with [job-dsl-plugin](https://github.com/jenkinsci/job-dsl-plugin) [example of job-dsl configuration](https://github.com/jenkinsci/github-integration-plugin/blob/master/github-pullrequest-plugin/src/test/resources/dsl/jobdsl.groovy)
